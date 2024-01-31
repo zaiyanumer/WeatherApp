@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="app.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	</head>
+	<body>
+		<header class="flex justify-between text-gray-600 container mx-auto flex p-5 items-center">
+			<a class="flex font-medium items-center text-gray-900 mb-4 md:mb-0">
+				<span class="ml-3 text-xl">Weather App</span>
+			</a>
+
+			<form class="w-96">
+				<label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+					>Search</label
+				>
+				<div class="relative">
+					<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+						<svg
+							class="w-4 h-4 text-gray-500 dark:text-gray-400"
+							aria-hidden="true"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 20 20"
+						>
+							<path
+								stroke="currentColor"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+							/>
+						</svg>
+					</div>
+					<input
+						type="search"
+						id="searchBox"
+						class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+						placeholder="Enter City Name"
+						required
+					/>
+					<button
+						id="submitBtn"
+						type="submit"
+						class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+					>
+						Search
+					</button>
+				</div>
+			</form>
+		</header>
+
+		<section class="text-gray-600 body-font mx-auto">
+			<div class="container px-5 py-24 mx-auto flex flex-wrap flex-col">
+				<h1 class="text-4xl mb-8 self-center"><span id="cityName">Search</span> Weather</h1>
+				<div class="flex flex-wrap -m-4 mx-auto">
+					<div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-8 sm:flex-row flex-col">
+						<div
+							class="mb-4 inline-flex items-center justify-center rounded-full font-black flex-col flex-shrink-0"
+						>
+							<span class="text-7xl"><span id="temp">0</span>&deg;</span>
+							<span class="feelLike text-md font-normal self-start">
+								Feels Like <span id="feels_like">0</span>&deg;
+							</span>
+						</div>
+						<div class="flex-grow container px-5 mx-auto">
+							<div class="w-full mx-auto overflow-auto">
+								<table class="table-auto w-full text-left whitespace-no-wrap">
+									<tr>
+										<td class="px-8 py-3">Wind Speed</td>
+										<td class="px-8 py-3">
+											<span id="wind_speed">0</span><span class="text-sm"> m/h</span>
+										</td>
+									</tr>
+									<tr>
+										<td class="border-t-2 border-gray-200 px-8 py-3">Humidity</td>
+										<td id="humidity" class="border-t-2 border-gray-200 px-8 py-3">0</td>
+									</tr>
+									<tr>
+										<td class="border-t-2 border-gray-200 px-8 py-3">Sunrise</td>
+										<td id="sunrise" class="border-t-2 border-gray-200 px-8 py-3">0</td>
+									</tr>
+									<tr>
+										<td class="border-t-2 border-gray-200 px-8 py-3">Sunset</td>
+										<td id="sunset" class="border-t-2 border-gray-200 px-8 py-3">0</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
